@@ -1,0 +1,32 @@
+{
+  "name": "apollo-microapp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:main": "vite packages/main",
+    "dev:app1": "vite packages/app1",
+    "dev:app2": "vite packages/app2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^17.0.33",
+    "lodash": "^4.17.21",
+    "pinia": "^2.0.14",
+    "qiankun": "^2.7.0",
+    "vite-plugin-qiankun": "^1.0.14",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.1",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.7",
+    "vue-tsc": "^0.34.7"
+  }
+}
