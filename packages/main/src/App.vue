@@ -2,15 +2,14 @@
  * @Author: Marshall
  * @Date: 2022-05-10 07:13:54
  * @LastEditors: Marshall
- * @LastEditTime: 2022-05-14 16:45:34
+ * @LastEditTime: 2022-06-06 09:20:19
  * @Description: 
  * @FilePath: /apollo-microapp/packages/main/src/App.vue
 -->
 <template>
   <div class="layout-wrapper">
-    <div>我是主应用的头部, 看看下面我的状态, 是不是能变化</div>
-    <div>{{ user.name }}</div>
-    <div id="apollo-viewport">main</div>
+    <router-view></router-view>
+    <div id="apollo-viewport"></div>
   </div>
 </template>
 
