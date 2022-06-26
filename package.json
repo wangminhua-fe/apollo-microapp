@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm-run-all --parallel --continue-on-error dev:*",
     "dev:main": "vite packages/main",
     "dev:app1": "vite packages/app1",
     "dev:app2": "vite packages/app2"
@@ -13,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo-fe/common": "workspace:^1.0.0",
+    "@element-plus/icons-vue": "^2.0.6",
     "@types/node": "^17.0.33",
     "axios": "^0.27.2",
     "element-plus": "^2.2.0",
@@ -25,6 +28,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.51.0",
     "sass-loader": "^12.6.0",
     "typescript": "^4.5.4",

@@ -2,22 +2,21 @@
  * @Author: Marshall
  * @Date: 2022-05-10 07:13:54
  * @LastEditors: Marshall
- * @LastEditTime: 2022-06-06 09:20:19
+ * @LastEditTime: 2022-06-26 23:00:25
  * @Description: 
  * @FilePath: /apollo-microapp/packages/main/src/App.vue
 -->
 <template>
   <div class="layout-wrapper">
     <router-view></router-view>
-    <div id="apollo-viewport"></div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
-import store from './store'
+import global from './global'
 
-const user = computed(() => store.getGlobalState().user)
+const user = computed(() => global.getGlobalState().user)
 
 const loading = ref(true)
 watch(loading, (val) => {

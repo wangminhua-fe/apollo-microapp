@@ -2,7 +2,7 @@
  * @Author: Marshall
  * @Date: 2022-05-10 07:44:17
  * @LastEditors: Marshall
- * @LastEditTime: 2022-05-14 15:49:11
+ * @LastEditTime: 2022-06-25 18:01:00
  * @Description: 
  * @FilePath: /apollo-microapp/packages/main/src/store.ts
  */
@@ -19,14 +19,12 @@ interface IUser {
 
 interface IState {
   user: IUser;
-  num: number;
 }
 
 const initState = reactive<IState>({
   user: {
     name: 'Marshall'
-  },
-  num: 0,
+  }
 });
 
 const actions: IMicroAppStateActions = initGlobalState(initState);

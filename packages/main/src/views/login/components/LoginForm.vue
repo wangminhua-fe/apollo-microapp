@@ -2,7 +2,7 @@
  * @Author: Marshall
  * @Date: 2022-04-28 11:13:01
  * @LastEditors: Marshall
- * @LastEditTime: 2022-06-13 13:20:19
+ * @LastEditTime: 2022-06-25 18:04:04
  * @Description: 
  * @FilePath: /apollo-microapp/packages/main/src/views/login/components/LoginForm.vue
 -->
@@ -34,6 +34,7 @@ import { ref, Ref } from 'vue';
 // import { validatePassword } from '../rules';
 import { useRouter } from 'vue-router';
 // import { useUserStore } from '@/store';
+import store from "../../../store";
 
 // const userStore = useUserStore();
 
@@ -77,7 +78,6 @@ const handleLogin = async (): Promise<void> => {
     if (!valid) {
       return;
     }
-    debugger
     loading.value = true;
     // userStore
     //   .login(loginForm.value)
@@ -89,7 +89,16 @@ const handleLogin = async (): Promise<void> => {
     //     console.log(error);
     //     loading.value = false;
     //   });
-    
+    const { username, password } = loginForm.value
+    if (username === 'admin' && password === '123456') {
+      localStorage.setItem('token', '123456')
+      localStorage.setItem('user', JSON.stringify({ username: 'admin', id: '1000000' }))
+
+      window.location.href = '/'
+
+      store.setGlobalState({ user: { username: 'admin', id: '1000000' } })
+    }
+
   });
 };
 </script>

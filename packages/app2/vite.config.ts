@@ -2,7 +2,7 @@
  * @Author: Marshall
  * @Date: 2022-05-14 16:55:30
  * @LastEditors: Marshall
- * @LastEditTime: 2022-05-14 17:20:58
+ * @LastEditTime: 2022-06-26 10:49:27
  * @Description: 
  * @FilePath: /apollo-microapp/packages/app2/vite.config.ts
  */
@@ -19,7 +19,7 @@ export default defineConfig({
   server: {
     open: true,
     host: "0.0.0.0",
-    port: 3001,
+    port: 3002,
     cors: true,
     proxy: {
       '/api': {

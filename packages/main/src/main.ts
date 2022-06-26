@@ -2,7 +2,7 @@
  * @Author: Marshall
  * @Date: 2022-05-10 07:13:54
  * @LastEditors: Marshall
- * @LastEditTime: 2022-06-06 09:28:28
+ * @LastEditTime: 2022-06-26 19:25:47
  * @Description: 
  * @FilePath: /apollo-microapp/packages/main/src/main.ts
  */
@@ -13,8 +13,10 @@ import 'element-plus/dist/index.css'
 import { start, registerMicroApps, setDefaultMountApp } from 'qiankun'
 import microApps from "./microapp";
 import router from './router'
+import store from './store';
+import Layout from "@/views/layout/Index.vue"
 
-const instance = createApp(App).use(router).use(ElementPlus).mount('#app')
+const instance = createApp(App).use(router).use(store).use(ElementPlus).mount('#app')
 
 // 定义loader方法，loading改变时，将变量赋值给App.vue的data中的isLoading
 function loader(loading) {
@@ -25,6 +27,7 @@ function loader(loading) {
 const apps = microApps.map(item => {
   return {
     ...item,
+    component: Layout,
     loader
   };
 });
@@ -48,5 +51,4 @@ registerMicroApps(apps, {
     }
   ]
 })
-// setDefaultMountApp("/app1");
 start()
